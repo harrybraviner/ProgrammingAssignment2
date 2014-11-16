@@ -18,6 +18,9 @@ makeCacheMatrix <- function(x = matrix()) {
   ## Setting function
   set <- function(y){
     x <<- y
+    ## If we've updated the matrix itself, then the
+    ## previously cached inverse (if any) will no longer
+    ## be valid - so replace it by NULL
     xInverse <<- NULL
   }
   
